@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 	default_scope -> { order('created_at DESC') } #replace with event_time
 	#validates :user_id, presence: true
 	validates :title, length: { in: 2..50 }
-	validates :comment, length: { maximum: 140 }
+	validates :comment, length: { maximum: 1000 }
 
 
   # Makes event belong to an organization if an organization is provided
