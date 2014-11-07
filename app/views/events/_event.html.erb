@@ -5,13 +5,10 @@
   <span class="comment well"><%= event.comment %></span>
   <span class="points">Worth: <%= event.points %> pts.</span>
   <br>
-  <!-- <span class="event_time">Happening at: <%= event.event_time %></span> 
-  <br> Datetime is tricky but will be added once it can be created in correct format -->
   <span class="timestamp">
-    <!--Created <%= time_ago_in_words(event.created_at) %> ago.<br>-->
-    Countdown: <%= distance_of_time_in_words(Time.zone.now, event.start_time) %><br>
-    Starts: <%= time_tag event.start_time %> <%#= distance_of_time_in_words(Time.zone.now, event.start_time) %><br>
-    Ends: <%= time_tag event.end_time %> later<br>
+    Countdown: (Optional)<br><!-- <%= distance_of_time_in_words(Time.zone.now, event.start_time) %><br> Off by 4 hours currently --> 
+    Starts: <%= time_tag event.start_time %><br>
+    Ends: <%= time_tag event.end_time %> <br>
   </span>
   
     <% if !current_user.nil? && current_user.moderator? %>
