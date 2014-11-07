@@ -3,7 +3,7 @@
   <span class="event_title"> <%= link_to organization.name, organization %></span><style>.event_title {font-size: 2.5em;}</style>
   <style>.points { font-size: 1.25em; }</style>
   <span class="comment"><%= organization.description %></span>
-  <span class="points"><%= link_to pluralize(organization.joiners.count, 'member'), '/organizations/' + organization.id.to_s + '/joiners' %></span> <!-- Add members here -->
+  <span class="points"><%= pluralize(organization.joiners.count, 'member') %></span> <!-- Add members here -->
   <br> 
   
     <%# if current_user.gleader %>
