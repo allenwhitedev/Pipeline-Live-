@@ -15,11 +15,10 @@ class EventsController < ApplicationController
 	def create
 		@event = Event.new(event_params)
 		if @event.save
-			flash[:success] = "Event Created: #{@event.id}"
+			flash[:success] = "Event Created"
 			if current_user.ou_rels.count == 1
 				organization = current_user.ou_rels.find_by(joiner_id: current_user.id)
-				@event.orga_own(organization)
-				flash[:info] = "#{organization.joined_id}"	
+				@event.orga_own(organization)	
 			else	
 			end 
 			redirect_to events_url
