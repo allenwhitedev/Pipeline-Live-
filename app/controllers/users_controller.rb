@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       current_user.join!(Organization.find(1)) #temp for demo, users should auto join their organization through separate 
       # organization login/signup pages
 			flash[:success] = "Welcome to the Pipeline, you can now check in to events and join other organizations"
-			redirect_to @user
+			redirect_to events_url
 		else
 			render 'new'
 		end
