@@ -13,9 +13,9 @@
       <%= f.number_field :points %>
      
      <h2>Starts at:</h2>
-      <%= f.datetime_select :start_time, :ampm => true, :minute_step => 5 %>
+      <%= f.datetime_select :start_time, :ampm => true, :minute_step => 5, placeholder: Time.zone.now %>
       <h2>Ends at:</h2>
-      <%= f.datetime_select :end_time, :ampm => true, :minute_step => 5 %>
+      <%= f.datetime_select :end_time, :ampm => true, :minute_step => 5, placeholder: Time.zone.now %>
 
       <%= f.submit "Create Event", class: "btn btn-large btn-primary" %>
     <% end %>
