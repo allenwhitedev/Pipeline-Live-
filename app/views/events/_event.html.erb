@@ -9,9 +9,9 @@
   <br> Datetime is tricky but will be added once it can be created in correct format -->
   <span class="timestamp">
     <!--Created <%= time_ago_in_words(event.created_at) %> ago.<br>-->
-    Starts: <%= time_tag event.start_time %> <%#= distance_of_time_in_words(Time.zone.now, event.start_time) %><br>
     Countdown: <%= distance_of_time_in_words(Time.zone.now, event.start_time) %><br>
-    Ends: <%= distance_of_time_in_words(Time.zone.now, event.end_time) %> later<br>
+    Starts: <%= time_tag event.start_time %> <%#= distance_of_time_in_words(Time.zone.now, event.start_time) %><br>
+    Ends: <%= time_tag event.end_time %> later<br>
   </span>
   
     <% if !current_user.nil? && current_user.moderator? %>
